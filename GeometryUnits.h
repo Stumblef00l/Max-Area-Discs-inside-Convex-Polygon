@@ -4,6 +4,9 @@
 #include <vector>
 #include <math.h>
 
+#define max(a, b) (a > b ? a : b)
+#define min(a, b) (a < b ? a : b)
+
 using namespace std;
 
 /**
