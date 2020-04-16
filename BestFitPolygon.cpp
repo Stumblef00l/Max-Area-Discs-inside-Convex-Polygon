@@ -9,6 +9,7 @@ MaximumInboundDiscs::MaximumInboundDiscs(int numberOfPoints, int dimension, vect
     rotationMatrix[0][1] = -sin(rotationAngle);
     rotationMatrix[1][0] = sin(rotationAngle);
     scalePoints();
+    findBestArea();
 }
 
 double MaximumInboundDiscs::getArea()
@@ -82,9 +83,9 @@ void MaximumInboundDiscs::findBestArea()
                     }
                     if (contained)
                     {
-                        corner = corner - centre;
                         double val = corner.dist();
                         double radius = (val * sin(rotationAngle / 2));
+                        radius /= d;
                         area = max(area, k * PI * radius * radius);
                     }
                 }
